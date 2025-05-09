@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Doctor</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Edit Doctor</h1>
+  <form method="POST" action="/doctors/update/<%= doctor.id %>">
+    <input name="name" value="<%= doctor.name %>" required><br>
+    <input name="specialization" value="<%= doctor.specialization %>" required><br>
+    <input name="contact" value="<%= doctor.contact %>" required><br>
+    <input name="availability" value="<%= doctor.availability %>" required><br>
+    <button type="submit">Update Doctor</button>
+  </form>
+</body>
+</html>

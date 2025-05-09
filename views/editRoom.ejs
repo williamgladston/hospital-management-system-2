@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Room</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Edit Room</h1>
+  <form method="POST" action="/rooms/update/<%= room.id %>">
+    <input name="room_number" value="<%= room.room_number %>" required><br>
+    <input name="type" value="<%= room.type %>" required><br>
+    <select name="status">
+      <option value="Available" <%= room.status === 'Available' ? 'selected' : '' %>>Available</option>
+      <option value="Occupied" <%= room.status === 'Occupied' ? 'selected' : '' %>>Occupied</option>
+    </select><br>
+    <button type="submit">Update Room</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Patient</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Edit Patient</h1>
+  <form method="POST" action="/patients/update/<%= patient.id %>">
+    <input name="name" value="<%= patient.name %>" required><br>
+    <input name="age" type="number" value="<%= patient.age %>" required><br>
+    <input name="gender" value="<%= patient.gender %>" required><br>
+    <input name="contact" value="<%= patient.contact %>" required><br>
+    <input name="disease" value="<%= patient.disease %>" required><br>
+    <button type="submit">Update</button>
+  </form>
+</body>
+</html>

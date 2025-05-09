@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Bill</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Generate New Bill</h1>
+  <form method="POST" action="/billing/create">
+    <label>Patient:</label>
+    <select name="patient_id" required>
+      <% patients.forEach(p => { %>
+        <option value="<%= p.id %>"><%= p.name %></option>
+      <% }) %>
+    </select><br>
+
+    <label>Admission Date:</label>
+    <input type="date" name="admission_date" required><br>
+
+    <label>Discharge Date:</label>
+    <input type="date" name="discharge_date" required><br>
+
+    <label>Lab Charges:</label>
+    <input type="number" name="lab_charge" required><br>
+
+    <label>Medicine Charges:</label>
+    <input type="number" name="medicine_charge" required><br>
+
+    <button type="submit">Generate Bill</button>
+  </form>
+</body>
+</html>

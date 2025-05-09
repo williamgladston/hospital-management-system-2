@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Billing</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>All Bills</h1>
+  <a href="/billing/new">Generate New Bill</a>
+  <table border="1">
+    <tr>
+      <th>ID</th><th>Patient</th><th>Admission</th><th>Discharge</th>
+      <th>Room</th><th>Lab</th><th>Medicine</th><th>Total</th><th>Actions</th>
+    </tr>
+    <% bills.forEach(b => { %>
+      <tr>
+        <td><%= b.id %></td>
+        <td><%= b.patient_name %></td>
+        <td><%= b.admission_date %></td>
+        <td><%= b.discharge_date %></td>
+        <td>₹<%= b.room_charge %></td>
+        <td>₹<%= b.lab_charge %></td>
+        <td>₹<%= b.medicine_charge %></td>
+        <td><strong>₹<%= b.total_amount %></strong></td>
+        <td>
+          <a href="/billing/delete/<%= b.id %>" onclick="return confirm('Delete this bill?')">Delete</a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>

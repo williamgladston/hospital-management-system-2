@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Feedback</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Submit Feedback</h1>
+  <form method="POST" action="/feedback/create">
+    <label>Name:</label>
+    <input type="text" name="name" required><br>
+
+    <label>Message:</label><br>
+    <textarea name="message" rows="5" cols="50" required></textarea><br>
+
+    <button type="submit">Submit Feedback</button>
+  </form>
+</body>
+</html>

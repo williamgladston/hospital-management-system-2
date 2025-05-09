@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Appointments</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Appointments</h1>
+  <a href="/appointments/new">Schedule New Appointment</a>
+  <table border="1">
+    <tr>
+      <th>ID</th><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th><th>Actions</th>
+    </tr>
+    <% appointments.forEach(a => { %>
+      <tr>
+        <td><%= a.id %></td>
+        <td><%= a.patient_name %></td>
+        <td><%= a.doctor_name %></td>
+        <td><%= a.date %></td>
+        <td><%= a.time %></td>
+        <td>
+          <a href="/appointments/delete/<%= a.id %>" onclick="return confirm('Cancel appointment?')">Cancel</a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>

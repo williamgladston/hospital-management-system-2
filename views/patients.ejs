@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patients</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>All Patients</h1>
+  <a href="/patients/new">Add New Patient</a>
+  <table border="1">
+    <tr>
+      <th>ID</th><th>Aadhaar</th><th>Name</th><th>Age</th><th>Gender</th><th>Contact</th><th>Disease</th><th>Actions</th>
+    </tr>
+    <% patients.forEach(p => { %>
+    <tr>
+      <td><%= p.id %></td>
+      <td><%= p.aadhaar_no %></td>
+      <td><%= p.name %></td>
+      <td><%= p.age %></td>
+      <td><%= p.gender %></td>
+      <td><%= p.contact %></td>
+      <td><%= p.disease %></td>
+      <td>
+        <a href="/patients/edit/<%= p.id %>">Edit</a>
+        <a href="/patients/delete/<%= p.id %>" onclick="return confirm('Delete this patient?')">Delete</a>
+      </td>
+    </tr>
+    <% }) %>
+  </table>
+</body>
+</html>

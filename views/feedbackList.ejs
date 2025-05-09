@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>All Feedback</h1>
+  <a href="/feedback/new">Add New Feedback</a>
+  <table border="1">
+    <tr>
+      <th>ID</th><th>Name</th><th>Message</th><th>Date</th><th>Action</th>
+    </tr>
+    <% feedbacks.forEach(f => { %>
+      <tr>
+        <td><%= f.id %></td>
+        <td><%= f.name %></td>
+        <td><%= f.message %></td>
+        <td><%= f.created_at.toDateString() %></td>
+        <td>
+          <a href="/feedback/delete/<%= f.id %>" onclick="return confirm('Delete this feedback?')">Delete</a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>

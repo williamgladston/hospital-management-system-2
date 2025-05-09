@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Lab Report</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Add Lab Report</h1>
+  <form method="POST" action="/lab/create">
+    <label>Patient:</label>
+    <select name="patient_id" required>
+      <% patients.forEach(p => { %>
+        <option value="<%= p.id %>"><%= p.name %></option>
+      <% }) %>
+    </select><br>
+
+    <label>Test Name:</label>
+    <input type="text" name="test_name" required><br>
+
+    <label>Result:</label>
+    <input type="text" name="test_result" required><br>
+
+    <label>Report Date:</label>
+    <input type="date" name="report_date" required><br>
+
+    <button type="submit">Add Report</button>
+  </form>
+</body>
+</html>

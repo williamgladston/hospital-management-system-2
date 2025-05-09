@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Room</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Add New Room</h1>
+  <form method="POST" action="/rooms/create">
+    <input name="room_number" placeholder="Room Number" required><br>
+    <input name="type" placeholder="Type (e.g., ICU, General)" required><br>
+    <select name="status">
+      <option value="Available">Available</option>
+      <option value="Occupied">Occupied</option>
+    </select><br>
+    <button type="submit">Add Room</button>
+  </form>
+</body>
+</html>
