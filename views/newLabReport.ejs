@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create New Lab Report</title>
+</head>
+<body>
+  <h2>Create New Lab Report</h2>
+  <form action="/lab-reports/create" method="POST">
+    <label for="patientId">Patient ID:</label><br>
+    <input type="text" id="patientId" name="patientId" required><br><br>
+    
+    <label for="reportDetails">Report Details:</label><br>
+    <textarea id="reportDetails" name="reportDetails" required></textarea><br><br>
+    
+    <button type="submit">Create Report</button>
+  </form>
+  <br>
+  <a href="/lab-reports">Back to Reports</a>
+</body>
+</html>

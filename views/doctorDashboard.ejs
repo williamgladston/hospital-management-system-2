@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doctor Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Welcome, Dr. <%= user.username %>!</h1>
+
+  <nav>
+    <ul>
+      <li><a href="/appointments/doctor">My Appointments</a></li>
+      <li><a href="/patients/assigned">Assigned Patients</a></li>
+      <li><a href="/lab-reports">Lab Reports</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <p>Use this dashboard to review and update your patient appointments and reports.</p>
+  </section>
+</body>
+</html>

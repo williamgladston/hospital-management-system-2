@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Lab Reports</title>
-  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <h1>All Lab Reports</h1>
-  <a href="/lab/new">Add New Report</a>
-  <table border="1">
-    <tr>
-      <th>ID</th><th>Patient</th><th>Test</th><th>Result</th><th>Date</th><th>Actions</th>
-    </tr>
-    <% reports.forEach(r => { %>
+  <h2>Lab Reports</h2>
+  <a href="/lab-reports/new">Create New Report</a>
+  <table>
+    <thead>
       <tr>
-        <td><%= r.id %></td>
-        <td><%= r.patient_name %></td>
-        <td><%= r.test_name %></td>
-        <td><%= r.test_result %></td>
-        <td><%= r.report_date %></td>
-        <td>
-          <a href="/lab/delete/<%= r.id %>" onclick="return confirm('Delete this report?')">Delete</a>
-        </td>
+        <th>Patient ID</th>
+        <th>Report Details</th>
+        <th>Actions</th>
       </tr>
-    <% }) %>
+    </thead>
+    <tbody>
+      <% reports.forEach(report => { %>
+        <tr>
+          <td><%= report.patient_id %></td>
+          <td><%= report.report_details %></td>
+          <td>
+            <a href="/lab-reports/delete/<%= report.id %>">Delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
   </table>
 </body>
 </html>
