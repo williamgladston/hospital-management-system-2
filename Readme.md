@@ -1,84 +1,77 @@
 🏥 Hospital Management System
+Welcome to the Hospital Management System — a full-stack application designed to streamline hospital operations. This system allows admins, doctors, and receptionists to manage patients, appointments, billing, rooms, lab reports, and more through dedicated dashboards. 🚑
 
-A full-stack Hospital Management System built using Node.js, Express.js, MySQL, and EJS. This system enables admin, doctors, and receptionists to manage patients, appointments, billing, rooms, lab reports, and more through dedicated dashboards and interfaces.
-
-⸻
-
-🚀 Features
-	•	User authentication (admin, doctor, receptionist) — with hardcoded login credentials
-	•	Patient registration and records
-	•	Doctor assignment and details
-	•	Room allotment system
-	•	Appointment scheduling
-	•	Billing generation
-	•	Lab reports creation and deletion
-	•	Feedback form and submission
-	•	Role-based dashboards
-
-⸻
-
-👨‍⚕️ Roles & Login Credentials
-	•	Admin
-Username: admin
-Password: admin123
-	•	Receptionist
-Username: reception2
-Password: admin123
-	•	Doctor
-Username: doctor2
-Password: admin123
-
-⸻
-
+🌟 Features at a Glance
+🔒 User Authentication: Role-based login for admin, doctors, and receptionists.
+📝 Patient Management: Register and maintain patient records.
+👨‍⚕️ Doctor Management: Assign doctors and view their details.
+🏨 Room Allotment: Manage room availability and assignments.
+📅 Appointment Scheduling: Book, view, and cancel appointments.
+💳 Billing System: Generate and manage bills for patients.
+🧪 Lab Reports: Create, view, and delete lab reports.
+💬 Feedback System: Collect and manage feedback from users.
+👥 Roles & Login Credentials
+Role	Username	Password
+Admin	admin	admin123
+Receptionist	reception2	admin123
+Doctor	doctor2	admin123
 🛠 Tech Stack
-	•	Backend: Node.js, Express.js
-	•	Frontend: EJS templating engine, HTML, CSS
-	•	Database: MySQL
-	•	Others: Express-session, Body-parser, dotenv
-
-⸻
-
+Backend: Node.js, Express.js
+Frontend: EJS templating engine, HTML, CSS
+Database: MySQL
+Others: Express-session, Body-parser, dotenv
 📂 Folder Structure Overview
-	•	config/ → MySQL DB configuration
-	•	controllers/ → Business logic for patients, doctors, billing, etc.
-	•	routes/ → Routes for different modules like auth, lab, billing, etc.
-	•	public/ → Static assets
-	•	views/ → EJS view templates
-	•	app.js → Entry point for the app
-	•	.env → Environment variables
-	•	README.md → Project info
-
-⸻
-
-⚙️ How to Run the Project Locally
-	1.	Clone the repo
+hospital-management-system/
+├── config/         # MySQL DB configuration
+├── controllers/    # Business logic for patients, doctors, billing, etc.
+├── routes/         # Routes for different modules like auth, lab, billing, etc.
+├── public/         # Static assets (CSS, JS, images)
+├── views/          # EJS view templates
+├── app.js          # Entry point for the app
+├── .env            # Environment variables
+└── README.md       # Project info
+🚀 Getting Started
+1️⃣ Clone the Repository
 git clone https://github.com/yourusername/hospital-management-system.git
-	2.	Navigate into the folder
 cd hospital-management-system
-	3.	Install dependencies
+2️⃣ Install Dependencies
 npm install
-	4.	Create a MySQL database
-Name: hospital_management_system
-You can create required tables using your own schema or refer to the sample SQL below.
-	5.	Sample SQL Tables
-	•	lab_reports
-id INT AUTO_INCREMENT PRIMARY KEY, patient_id INT, report_details TEXT
-	•	feedback
-id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), message TEXT
-	•	You may add additional tables like patients, doctors, rooms, appointments, and billing.
+3️⃣ Set Up the Database
+Create a MySQL database named hospital_management_system.
+Use the following sample SQL to create tables:
+CREATE TABLE lab_reports (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_id INT,
+    report_details TEXT
+);
 
-	7.	Run the app
-npm start
-	8.	Access in browser
-Visit: http://localhost:3000
+CREATE TABLE feedback (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    message TEXT
+);
+Add additional tables for patients, doctors, rooms, appointments, and billing as needed.
+4️⃣ Run the Application
+node app.js
+5️⃣ Access the App
+Open your browser and visit: http://localhost:3000
 
-⸻
+🧪 Modules Overview
+Module	Description	Endpoint
+Patients	Register and view patient records	/patients
+Doctors	Manage doctor details	/doctors
+Appointments	Schedule or cancel appointments	/appointments
+Rooms	Manage room availability and allotment	/rooms
+Billing	Generate and view bills	/billing
+Lab Reports	Create, view, and delete lab reports	/lab-reports
+Feedback	View and manage user feedback	/feedback
+📸 Screenshots
+Add screenshots of the application here to showcase the UI and features.
 
-🧪 Modules Covered
-	•	/patients → Register and view patients
-	•	/doctors → Doctor management
-	•	/appointments → Schedule or cancel appointments
-	•	/rooms → Room availability and allotment
-	•	/billing → Calculate and generate bills
-	•	/lab-reports → Manage test reports
-	•	/feedback → View and manage feedback
+🤝 Contributing
+Feel free to fork this repository and submit pull requests. Contributions are always welcome! 😊
+
+📧 Contact
+For any queries or support, reach out to: williamgladston4@gmail.com
+
+Happy coding! 💻✨
